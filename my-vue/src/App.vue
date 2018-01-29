@@ -16,7 +16,6 @@ export default {
 	margin: 0;padding: 0;
 }
 html,body{height: 100%;}
-html{font-size: 31.25vw;}
 ul,li,ol{list-style:none;}
 img,fieldset{border:0; }
 img{display:block;}

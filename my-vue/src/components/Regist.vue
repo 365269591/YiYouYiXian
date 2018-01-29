@@ -27,19 +27,19 @@
 <style scoped>
 	.regist{width: 100%;height: 100%;background: #FFFFFF;overflow: hidden;}
 	.regist p{
-		width: 100%;height: 0.42rem;margin-bottom: 1px;color: #333333;line-height: 0.5rem;
+		width: 100%;height: 1rem;margin-bottom: 0.01rem;color: #333333;line-height:1rem;
 	}
 	.regist p span{
-		display: inline-block;height:0.42rem;width: 0.66rem;text-align: right;margin-right: 0.1rem;
+		display: inline-block;height:1rem;width: 1.2rem;text-align: right;margin-right: 0.2rem;
 	}
 	input{
 		border: none;
 	}
 	.regist p:nth-child(5) a{
-		display: inline-block;background: #ff6309;color: #FFFFFF;border-radius: 0.05rem;height: 0.32rem;line-height: 0.32rem;
+		display: inline-block;background: #ff6309;color: #FFFFFF;border-radius: 0.05rem;height: 0.64rem;line-height: 0.64rem;
 	}
 	#bt{
-		width: 97%;height: 0.5rem;background: #ff0000;border: none;color: #ffffff;text-align: center;line-height: 0.5rem;
-		margin-left: 0.05rem;border-radius: 0.05rem;margin-top: 0.05rem;margin-bottom: 0.05rem;
+		width: 97%;height: 1rem;background: #ff0000;border: none;color: #ffffff;text-align: center;line-height: 1rem;
+		margin-left: 0.1rem;border-radius: 0.1rem;margin-top: 0.1rem;margin-bottom: 0.1rem;
 	}
 </style>
