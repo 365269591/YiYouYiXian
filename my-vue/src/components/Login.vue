@@ -17,6 +17,27 @@
 			return {
 				
 			}
+		},
+		mounted(){
+			function login() {
+				$.ajax({
+					url: "/api/loginajax",
+					type: "post",
+					data: {
+						username: $("#username").val(),
+						psw: $("#psw").val(),
+					},
+					success: function(res) {
+						console.log(res);
+						if(res.code == 1) {
+							alert(res.message);
+							location.href = "/dashboard?r=" + new Date().getTime();
+						} else {
+							alert(res.message);
+						}
+					}
+				})
+			}
 		}
 	}
 </script>
