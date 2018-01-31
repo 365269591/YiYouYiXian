@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import Regist from '@/components/Regist'
 import List from '@/components/List'
+import Chowhound from '@/components/Chowhound'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/list',
       name: 'List',
       component: List
+    },
+    {
+      path: '/chowhound',
+      name: 'Chowhound',
+      component: Chowhound
     }
   ]
 })

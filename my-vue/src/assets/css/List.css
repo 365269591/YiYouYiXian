@@ -164,5 +164,11 @@
 .nav-3>dl dd span{
 	float: left;display: inline;height: 0.5rem;line-height: 0.5rem;
 }
+.nav-4 {
+	width: 100%;height: 1.4rem;text-align: center;padding-top: 0.2rem;
+}
+.nav-4 .atn{
+	height: 0.88rem;width: 2rem;margin-bottom: 0.2rem;outline: none;
+}
 
 
