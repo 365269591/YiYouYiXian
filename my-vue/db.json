@@ -1,0 +1,10 @@
+{
+	"my-name":[
+		{"id":1,"live":2,"eat":3},
+		{"id":2,"live":3,"eat":4},
+		{"id":3,"live":4,"eat":5}
+	],
+	"my-price":[
+		{"ipone":"x8","aihao":"apaple","time":24}
+	]
+}

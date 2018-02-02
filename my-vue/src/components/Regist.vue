@@ -1,59 +1,83 @@
 <template>
 	<div class="regist">
-		<p><span>用&nbsp;户&nbsp;&nbsp;名</span><input type="text" placeholder="请输入用户名" id="username"/><i>字母与数字相结合</i></p>
-		<p><span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span><input type="password" placeholder="请输入密码" id="psw"/><i>请输入6位数的密码</i></p>
-		<p><span>确认密码</span><input type="password" placeholder="请确认密码" id="psw1"/><i>两次的密码不一致</i></p>
-		<p><span>手机号码</span><input type="number" placeholder="手机号" id="phone"/><i>请输入11位数字的密码</i></p>
-		<p><span>验&nbsp;证&nbsp;&nbsp;码</span><input type="password" placeholder="验证码" id="code"/><a href="javascript:;">&nbsp;&nbsp;免费获取验证码&nbsp;&nbsp;</a></p>
-		<button id="bt" onclick="regist()">注册</button>
+		<p><span>用&nbsp;户&nbsp;&nbsp;名</span><input type="text" placeholder="请输入用户名" v-model="username"/><i>字母与数字相结合</i></p>
+		<p><span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span><input type="password" placeholder="请输入密码" v-model="psw"/><i>请输入6位数的密码</i></p>
+		<p><span>确认密码</span><input type="password" placeholder="请确认密码" v-model="psw1"/><i>两次的密码不一致</i></p>
+		<p><span>手机号码</span><input type="number" placeholder="手机号" v-model="phone"/><i>请输入11位数字的密码</i></p>
+		<p><span>验&nbsp;证&nbsp;&nbsp;码</span><input type="password" placeholder="验证码" v-model="code"/><a href="javascript:;">&nbsp;&nbsp;免费获取验证码&nbsp;&nbsp;</a></p>
+		<button id="bt" @click="regist()">注册</button>
 
 	</div>
 </template>
 
 <script>
+	import axios from 'axios';
 	export default {
 		name :"Regist",
 		data () {
 			return {
-				
+				username:"",
+				psw:"",
+				psw1:"",
+				phone:"",
+				code:""
+			}
+		},
+		methods:{
+			regist:function(){
+				axios.post('/api/regist', {
+				    username: this.username,
+				    psw:this.psw
+				  })
+				  .then(function (res) {
+				    console.log(res);
+				    if(res.code==1){
+				    alert(res.message);
+				    location.href = "/login";
+				    }
+
+				  })
+				  .catch(function (error) {
+				    console.log(error);
+				  });
 			}
 		},
 		mounted(){
-			var oInput = document.getElementsByTagName('input');
-			var oSpan = document.getElementsByTagName('i');
-			var oBtn = document.getElementById('bt');
-			oInput[0].onblur = function(){
-				var re = /^[\u4e00-\u9fa5]{6,12}$/g;
-				if(re.test(oInput[0].value) == false || oInput[0].value == ""){
-					oSpan[0].style.display = "block";
-				}else{
-					oSpan[0].style.display = "none";
-				}
-			};
-			oInput[1].onblur = function(){
-				var re = /^([0-9])([\w\.\+\*\$\/\\]{6})$/g;
-				if(re.test(oInput[1].value) == false || oInput[1].value == ""){
-					oSpan[1].style.display = "block";
-				}else{
-					oSpan[1].style.display = "none";
-				}
-			};
-			oInput[2].onblur = function(){
-				var re = /^([0-9])([\w\.\+\*\$\/\\]{6})$/g;
-				if(re.test(oInput[2].value) == false || oInput[2].value == ""){
-					oSpan[2].style.display = "block";
-				}else{
-					oSpan[2].style.display = "none";
-				}
-			};
-			oInput[3].onblur = function(){
-				var re = /^(158|156|188|135|155)\d{9}$/g;
-				if(re.test(oInput[3].value) == false || oInput[3].value == ""){
-					oSpan[3].style.display = "block";
-				}else{
-					oSpan[3].style.display = "none";
-				}
-			};
+//			var oInput = document.getElementsByTagName('input');
+//			var oSpan = document.getElementsByTagName('i');
+//			var oBtn = document.getElementById('bt');
+//			oInput[0].onblur = function(){
+//				var re = /^[\u4e00-\u9fa5]{6,12}$/g;
+//				if(re.test(oInput[0].value) == false || oInput[0].value == ""){
+//					oSpan[0].style.display = "block";
+//				}else{
+//					oSpan[0].style.display = "none";
+//				}
+//			};
+//			oInput[1].onblur = function(){
+//				var re = /^([0-9])([\w\.\+\*\$\/\\]{6})$/g;
+//				if(re.test(oInput[1].value) == false || oInput[1].value == ""){
+//					oSpan[1].style.display = "block";
+//				}else{
+//					oSpan[1].style.display = "none";
+//				}
+//			};
+//			oInput[2].onblur = function(){
+//				var re = /^([0-9])([\w\.\+\*\$\/\\]{6})$/g;
+//				if(re.test(oInput[2].value) == false || oInput[2].value == ""){
+//					oSpan[2].style.display = "block";
+//				}else{
+//					oSpan[2].style.display = "none";
+//				}
+//			};
+//			oInput[3].onblur = function(){
+//				var re = /^(158|156|188|135|155)\d{9}$/g;
+//				if(re.test(oInput[3].value) == false || oInput[3].value == ""){
+//					oSpan[3].style.display = "block";
+//				}else{
+//					oSpan[3].style.display = "none";
+//				}
+//			};
 		}
 	}
 </script>

@@ -17,6 +17,7 @@
 						<p>觅食find ：破解地图里的美食密码</p>
 					</li>
 				</ul>
+
 			</div>
 		</div>
 		<div class="head">
@@ -240,7 +241,11 @@
 		name:"List",
 		data (){
 			return {
-				
+				arr_top:[
+				"https://pic.maizuo.com/h5PicUpload/e7ad01f7685b9d94dfb9511bf71ac191.jpg",
+				"https://pic.maizuo.com/h5PicUpload/062a965ab71db31fe0b7ad6f8c529935.jpg",
+				"https://pic.maizuo.com/usr/movie/6f8d3193bc19f9a36e61abacd15b863a.jpg"
+				],
 			}
 		},
 		mounted(){
@@ -250,12 +255,14 @@
 		
 			$(".nav>div").hide().eq($(this).index()).show();
 			})
-		}
+		},
 	}
 </script>
 
 <style scoped>
 	@import '../assets/css/List.css';
+	@import '../assets/css/swiper.css';
+	@import '../assets/css/swiper.min.css';
 	.nav>.nav-1{
 		display: none;
 	}

@@ -1,8 +1,8 @@
 <template>
 	<div class="login">
-		<p><span>用户名</span><input type="text" placeholder="请输入用户名" id="username"/></p>
-		<p><span>密&nbsp;&nbsp;&nbsp;码</span><input type="password" placeholder="请输入密码" id="psw"/></p>
-		<button id="btn" onclick="login()">登录</button>
+		<p><span>用户名</span><input type="text" placeholder="请输入用户名" id="username" v-model="username"/></p>
+		<p><span>密&nbsp;&nbsp;&nbsp;码</span><input type="password" placeholder="请输入密码" id="psw" v-model="psw"/></p>
+		<button id="btn" @click="login()">登录</button>
 		<div class="login-1">
 			<a href="javascript:;">忘记密码?</a>
 			<a href="javascript:;">立即注册</a>
@@ -11,32 +11,32 @@
 </template>
 
 <script>
+	import axios from "axios";
 	export default {
 		name :"Login",
 		data () {
 			return {
-				
+				username:"",
+				psw:""
 			}
 		},
-		mounted(){
-			function login() {
-				$.ajax({
-					url: "/api/loginajax",
-					type: "post",
-					data: {
-						username: $("#username").val(),
-						psw: $("#psw").val(),
-					},
-					success: function(res) {
-						console.log(res);
-						if(res.code == 1) {
-							alert(res.message);
-							location.href = "/dashboard?r=" + new Date().getTime();
-						} else {
-							alert(res.message);
-						}
-					}
-				})
+		methods:{
+			login:function(){
+				axios.post('/api/login', {
+				    username: this.username,
+				    psw:this.psw
+				  })
+				  .then(function (res) {
+				    console.log(res);
+					    if(res.code == 1){
+					    alert(res.message);
+						location.href = "/dashboard?r=" + new Date().getTime();
+				    }
+
+				  })
+				  .catch(function (error) {
+				    console.log(error);
+				  });
 			}
 		}
 	}
