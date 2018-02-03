@@ -6,23 +6,36 @@
 </template>
 
 <script>
+
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+  	
+  }
 }
 </script>
 
 <style>
-*{
-	margin: 0;padding: 0;
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	html,body{
+		width: 100%;
+		height: 100%;
+		
+	}
+	html{
+		font-size: 31.25vw;
+	}
+	body{
+		background: #fafafa;
+	}
+#app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
-html,body{height: 100%;}
-ul,li,ol{list-style:none;}
-img,fieldset{border:0; }
-img{display:block;}
-i{font-style:normal ;}
-a{text-decoration:none; color:#333;}
-h1,h2,h3,h4,h5,h6{font-weight:100;}
-body{font-size:12px; font-family:"微软雅黑";}
-input,a{outline:none;}
-body{background: #eeeeee;}
 </style>

@@ -1,280 +1,251 @@
 <template>
-	<div class="list">
-		<div class="banner">
-			<div class="banner-title">2018-01-30为您精选</div>
-			<div class="banner-img">
-				<ul class="ul">
-					<li>
-						<div class="li-1"></div>
-						<p>一优一县</p>
-					</li>
-					<li>
-						<div class="li-2"></div>
-						<p>榜单大海选!!谁上榜你说了算</p>
-					</li>
-					<li>
-						<div class="li-3"></div>
-						<p>觅食find ：破解地图里的美食密码</p>
-					</li>
-				</ul>
-
+	<div class="goods">
+		<div class="plate today_recommend">
+			<div class="today_title title">			
+				<div class="left_con"></div>
+				<h1>今日推荐</h1>
+				<div class="right_con"></div>
+			</div>
+			<div class="cell">
+				<div class="recommend_cell" v-for="item in recommend">
+						<router-link :to="{name:'Detail', params:{fid: item.product}}"><img v-lazy="item.image" class="imgs"/></router-link>
+				</div>
 			</div>
 		</div>
-		<div class="head">
-			<div class="head-1">
-				<span>新闻动态</span><span>></span>
-			</div>
-			<div class="head-2">
-				<dl>
-					<dt>
-						<img src="http://www.1x1u.cn/upload/image/201709/uid5af74306ac-d5d3-461f-8868-506b4a070248.png"/>
-					</dt>
-					<dd>
-						<p>
-							<i class="tu"></i><span>厦门市</span>
-						</p>
-						<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-						<p>ow</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt>
-						<img src="http://www.1x1u.cn/upload/image/201709/uid5a630a6eb0-a14f-4b82-8a0d-855238ae95a7.jpg"/>
-					</dt>
-					<dd>
-						<p>
-							<i class="tu"></i><span>厦门市</span>
-						</p>
-						<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-						<p>ow</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt>
-						<img src="http://www.1x1u.cn/upload/image/201706/_uid5a904f5d81-f4be-4628-b106-a6e38a63318e.jpg"/>
-					</dt>
-					<dd>
-						<p>
-							<i class="tu"></i><span>厦门市</span>
-						</p>
-						<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-						<p>ow</p>
-					</dd>
-				</dl>
-			</div>
-		</div>
-		<div class="head">
-			<div class="head-1">
-				<span>吃货攻略</span><span>></span>
-			</div>
-			<div class="head-2">
-				<dl>
-					<dt>
-						<img src="http://www.1x1u.cn/upload/image/201709/uid5a414d2eaf-1b55-4f76-be94-faa498fa9c25.jpg"/>
-					</dt>
-					<dd>
-						<p>
-							<i class="tu"></i><span>厦门市</span>
-						</p>
-						<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-						<p>ow</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt>
-						<img src="http://www.1x1u.cn/upload/image/201709/uid5a6560f758-f818-4b21-b8ae-bfa944491a74.jpg"/>
-					</dt>
-					<dd>
-						<p>
-							<i class="tu"></i><span>厦门市</span>
-						</p>
-						<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-						<p>ow</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt>
-						<img src="http://www.1x1u.cn/upload/image/201704/uid5a2693134d-dbfa-479f-99de-1907c515d3e8.jpg"/>
-					</dt>
-					<dd>
-						<p>
-							<i class="tu"></i><span>厦门市</span>
-						</p>
-						<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-						<p>ow</p>
-					</dd>
-				</dl>
+		<div class="plate channel">
+			<div class="channel_title title">			
+				<div class="left_con"></div>
+				<h1>县优品道</h1>
+				<div class="right_con"></div>
+			</div>		
+			<div class="cell" >
+				<div class="swiper-container">
+				  <div class="swiper-wrapper">
+				    <div class="swiper-slide" v-for="item in channel">
+				    	 <img v-lazy="item.image"  class="imgs"/>
+				    </div>		    
+				</div>
+				<div class="swiper-pagination"></div>
 			</div>
 			
-			<div class="nav">
-				<ul class="tab">
-					<li class="cur"><span>行业解读</span></li>
-					<li><span>热门问答</span></li>
-					<li><span>每日地理</span></li>
-				</ul>
-				<div class="nav-1" id="on">
-					<dl>
-						<dt>
-							<img src="http://www.1x1u.cn/upload/image/201801/_uid5ab6740ed1-a88b-4294-8e35-2ab0bf9eb9b9.jpg"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<img src="http://www.1x1u.cn/upload/image/201704/_uid5aa0df9b9c-dfd7-455f-88e3-6bed7a68c8ea.jpg"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<img src="http://p1.pstatp.com/large/19ed000224192899050c"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-				</div>
-				<div class="nav-2">
-					<dl>
-						<dt>
-							<img src="http://www.1x1u.cn/upload/image/201704/uid5a0cf8ead3-fbe3-4738-a137-34441a810224.gif"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<img src="http://img.mp.itc.cn/upload/20170330/9462438de0dc46e580cc90fcd7903df4_th.jpg"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<img src="http://p9.pstatp.com/large/191900068146d9d80ba9"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-				</div>
-				<div class="nav-3">
-					<dl>
-						<dt>
-							<img src="http://www.1x1u.cn/upload/image/201612/_uid5a712930b1-8802-464e-a58b-0c12606cf45c.jpg"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<img src="http://www.1x1u.cn/upload/image/201612/uid5ac3f8d5a4-efec-40ee-8bd7-1c8a78916c66.jpg"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-					<dl>
-						<dt>
-							<img src="http://www.1x1u.cn/upload/image/201611/_uid5acd690cfd-ca89-465a-a308-c4fa71e416d5.jpg"/>
-						</dt>
-						<dd>
-							<p>
-								<i class="tu"></i><span>福建</span>
-							</p>
-							<p>2017厦门中国国际投资贸易洽谈会 大中华区老字号商城首次亮相</p>
-							<p>ow</p>
-						</dd>
-					</dl>
-				</div>
-				<div class="nav-4">
-					<button class="atn">加载更多</button>
-					<p>版权©优艾迪所有</p>
-				</div>
-				
-			</div>
 		</div>
 	</div>
+			<div class="listA fruit" v-for="(item,index) in data">
+					<div class="title">								
+						<h1>{{titles[index]}}</h1>				
+					</div>					
+						<div class="cell">
+							<div class="ul">
+								<ul>	
+									<li v-for="it in item.products">
+										<div class="image">
+
+											<div class="swiper-container">
+												  <div class="swiper-wrapper">
+												    <div class="swiper-slide" v-for="item in channel">
+												    	<router-link :to="{name:'Detail', params:{fid: it.id}}"> <img v-lazy="it.image"  class="imgs"/></router-link>
+												    </div>		    
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											
+											
+											
+										</div>
+										<p>{{it.name}}</p>
+										<span>{{it.price}}</span>
+									</li>
+								</ul>
+						<router-link :to="{name:'More', params:{fid: item.id}}"><div class="more">
+									<span>加</span>
+									<span>载</span>
+									<span>更</span>
+									<span>多</span>
+								</div>
+								</router-link>
+							</div>
+						</div>
+		
+			</div>
+		</div>
+</div>
+	
 </template>
 
 <script>
-	export default {
-		name:"List",
-		data (){
-			return {
-				arr_top:[
-				"https://pic.maizuo.com/h5PicUpload/e7ad01f7685b9d94dfb9511bf71ac191.jpg",
-				"https://pic.maizuo.com/h5PicUpload/062a965ab71db31fe0b7ad6f8c529935.jpg",
-				"https://pic.maizuo.com/usr/movie/6f8d3193bc19f9a36e61abacd15b863a.jpg"
-				],
-			}
-		},
-		mounted(){
-			$(".tab li").click(function(){
-				
-			$(".tab li").eq($(this).index()).addClass("cur").siblings().removeClass("cur");
-		
-			$(".nav>div").hide().eq($(this).index()).show();
+import axios from "axios";
+import $ from "jquery";
+import Swiper from 'swiper';
+export default {
+	name : "list",
+	data(){
+		return {
+			recommend:[],
+			channel:[],
+			data:[],
+			titles:["风情水果","解乏零食","生态零食","夺主配料","最火礼品"],
+			posLeft:[]
+		}
+	},
+	mounted(){
+		this.get_recommend()
+		this.wrap_width();
+		this.getFruits()
+	},
+	methods:{
+		get_recommend(){
+			axios.get("/wx/activity/findIndex?id=10")
+			.then((res)=>{
+//				console.log(res)
+				this.recommend = res.data.recommend
+//				console.log(this.recommend)
 			})
 		},
+		wrap_width(){
+			axios.get("/wx/special/homeSpecial")
+			.then((res)=>{
+				this.channel = res.data.specialNews
+				this.$nextTick(function(){
+						var swiper = new Swiper('.channel .swiper-container', {
+						      slidesPerView: 3,
+						      spaceBetween: 30,
+						      freeMode: true,
+						      pagination: {
+						        el: '.swiper-pagination',
+						        clickable: true,
+						        autoplay:true
+						      },
+						    });
+				})
+			})	
+		},
+		getFruits(){
+			axios.get("/wx/special/homeSpecial")
+			.then((res)=>{
+				
+				this.data = res.data.specials;
+//				console.log(this.data)
+				var that = this;
+				this.$nextTick(function(){
+					var liw = parseInt($(".fruit li").css("width"));
+					
+					var len = $(".fruit").length;
+					for(let i =0;i < len;i ++){
+
+						var lilen = $(".fruit").eq(i).find("li").length;
+
+						$(".fruit").eq(i).find(".ul").css({width:(lilen+1)*liw})
+				
+					}
+
+				})
+			})
+		}
+	
 	}
+}
+
 </script>
 
 <style scoped>
-	@import '../assets/css/List.css';
-	@import '../assets/css/swiper.css';
-	@import '../assets/css/swiper.min.css';
-	.nav>.nav-1{
-		display: none;
-	}
-	.nav>.nav-2{
-		display: none;
-	}
-	.nav>.nav-3{
-		display: none;
-	}
-	#on{display: block;}
-	.cur>span{border-bottom: 2px solid #980000;}
-	.nav-2{
-		width: 100%;height: 7.26rem;
-	}
+@import '../assets/css/swiper.min.css';
+.goods{
+	font-size:0.14rem;
+	width: 100%;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+.plate,.listA{
+	width: 100%;
+	padding: 0 5px 5px;
+	border-top: 1px solid transparent;
+	margin-top: 5px;
+	background: #fff;
+}
+.plate .title,.listA .title{
+	width: 1.45rem;
+	height: 0.35rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 auto;
+}
+.plate h1,.listA h1{
+	font-size: 0.14rem;
+}
+.imgs{
+	min-height: 1rem;
+}
+.plate .left_con,.plate .right_con{
+	width: 0.2rem;
+	height: 0.2rem;
+	background: url(../assets/imgs/icon.png) no-repeat;
+}
+.today_recommend .cell{
+	width: 100%;
+	height: 1.15rem;
+	display: flex;
+	justify-content: space-between;
+}
+.today_recommend .recommend_cell{
+	width: 49%;
+	height: 100%;
+}
+.channel .cell{
+	width: 100%;
+}
+.channel .swiper-slide{
+	width: 1.2rem!important;
+	height: 1.4rem!important;
+	box-sizing: border-box;
+	padding: 0.05rem;
+	margin-right: 0!important;
+}
+
+.channel img{
+	width: 100%!important;
+	height: 100%!important;
+}
+.listA{
+	width: 100%;
+	height: 2.06rem;
+}
+
+.listA .cell{
+	width: 3.09rem;
+	overflow: auto;
+	height: 1.56rem;
+}
+.listA .ul{
+	display: flex;
+}
+
+.listA .cell ul{
+	display: flex;
+	list-style: none;
+}
+.listA .cell ul li{
+	width: 1.03rem;
+	height: 1.56rem;
+}
+.listA .cell  .more{
+	width: 1.03rem;
+	height: 1.56rem;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-self: center;
+	text-align: center;
+}
+.listA .cell p{
+	margin-top: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	
+}
+
 </style>

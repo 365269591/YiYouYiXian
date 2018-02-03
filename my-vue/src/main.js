@@ -3,14 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import $ from 'jquery'
-
+import store from './vuex' // Vuex的配置文件
+import Mintui from 'mint-ui'
+import 'mint-ui/lib/style.css'
 Vue.config.productionTip = false
 
+Vue.use(Mintui)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
